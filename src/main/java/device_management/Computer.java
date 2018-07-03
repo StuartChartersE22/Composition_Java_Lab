@@ -1,13 +1,14 @@
-package device_management.Output_Devices;
+package device_management;
 
+import behaviours.IInput;
 import behaviours.IOutput;
-
-import java.util.ArrayList;
 
 public class Computer {
     private int ram;
     private int hddSize;
     private IOutput outputDevice;
+    private IInput inputDevice;
+    private String dataStream;
 
 //    public <I extends IOutput> Computer(int ram, int hddSize, I outputDevice) {
 //        this.ram = ram;
@@ -15,10 +16,12 @@ public class Computer {
 //        this.outputDevice = (outputDevice);
 //    }
 
-    public Computer(int ram, int hddSize, IOutput outputDevice) {
+    public Computer(int ram, int hddSize, IOutput outputDevice, IInput inputDevice) {
         this.ram = ram;
         this.hddSize = hddSize;
         this.outputDevice = outputDevice;
+        this.inputDevice = inputDevice;
+        this.dataStream = null;
     }
 
     public int getRam() {
@@ -39,5 +42,22 @@ public class Computer {
 
     public void setOutputDevice(IOutput outputDevice) {
         this.outputDevice = outputDevice;
+    }
+
+    public IInput getInputDevice() {return this.inputDevice;}
+
+    public void setInputDevice(IInput inputDevice ) {this.inputDevice = inputDevice;}
+
+    private String getDataStream() {
+        return this.dataStream;
+    }
+
+    public String inputData(String data) {
+        this.dataStream = data;
+        return data;
+    }
+
+    public String outPutDataStream(){
+     return outputData(this.dataStream);
     }
 }

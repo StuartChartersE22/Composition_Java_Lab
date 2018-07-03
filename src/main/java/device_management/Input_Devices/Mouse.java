@@ -1,6 +1,7 @@
 package device_management.Input_Devices;
 
 import behaviours.IInput;
+import device_management.Computer;
 
 public class Mouse implements IInput {
 
@@ -20,7 +21,9 @@ public class Mouse implements IInput {
         return this.type;
     }
 
-    public String sendData(String data) {
+    @Override
+    public String sendData(String data, Computer computer) {
+        computer.inputData(data);
         return data;
     }
 }

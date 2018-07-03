@@ -1,6 +1,7 @@
 package device_management.Input_Devices;
 
 import behaviours.IInput;
+import device_management.Computer;
 
 public class Keyboard implements IInput {
 
@@ -15,6 +16,12 @@ public class Keyboard implements IInput {
     }
 
     public String sendData(String data) {
+        return data;
+    }
+
+    @Override
+    public String sendData(String data, Computer computer) {
+        computer.inputData(data);
         return data;
     }
 }

@@ -1,4 +1,6 @@
-import device_management.Output_Devices.Computer;
+import device_management.Computer;
+import device_management.Input_Devices.Keyboard;
+import device_management.Input_Devices.Mouse;
 import device_management.Output_Devices.Monitor;
 import device_management.Output_Devices.Printer;
 import device_management.Output_Devices.Speaker;
@@ -12,11 +14,14 @@ public class ComputerTest {
     Computer computer;
     Monitor monitor;
     Printer printer;
+    Mouse mouse;
+    Keyboard keyboard;
+
 
     @Before
     public void before() {
         monitor = new Monitor(22, 786432);
-        computer = new Computer(8, 512, monitor);
+        computer = new Computer(8, 512, monitor, mouse);
         printer = new Printer("Epson", "Stylus", 120, 4);
     }
 
@@ -42,14 +47,14 @@ public class ComputerTest {
 
     @Test
     public void canOutPutDataViaPrinter(){
-        computer = new Computer(8, 512, printer);
+        computer = new Computer(8, 512, printer, mouse);
         assertEquals("printing: holiday pictures", computer.outputData("holiday pictures"));
     }
 
     @Test
     public void canOutputDataViaSpeaker(){
         Speaker speaker = new Speaker(100);
-        computer = new Computer(8, 512, speaker);
+        computer = new Computer(8, 512, speaker, mouse);
         assertEquals("playing: Beep!", computer.outputData("Beep!"));
     }
 
@@ -59,29 +64,26 @@ public class ComputerTest {
         assertEquals("printing: dissertation", computer.outputData("dissertation"));
     }
 
-//    ------------------------------------------------------------------------------------------------------
+    @Test
+    public void getInputDevice() {
+        assertEquals(mouse, computer.getInputDevice());
+    }
 
-//    @Test
-//    public void hasInputDevice() {
-//        assertNotNull(computer.getInputDevice());
-//    }
-//
-//    @Test
-//    public void canInputPutDataViaPrinter(){
-//        computer = new Computer(8, 512, printer);
-//        assertEquals("printing: holiday pictures", computer.outputData("holiday pictures"));
-//    }
-//
-//    @Test
-//    public void canOutputDataViaSpeaker(){
-//        Speaker speaker = new Speaker(100);
-//        computer = new Computer(8, 512, speaker);
-//        assertEquals("playing: Beep!", computer.outputData("Beep!"));
-//    }
-//
-//    @Test
-//    public void canSetOutputDevice(){
-//        computer.setOutputDevice(printer);
-//        assertEquals("printing: dissertation", computer.outputData("dissertation"));
-//    }
-}
+    @Test
+    public void setInputDevice() {
+        computer.setInputDevice(keyboard);
+        assertEquals(keyboard, computer.getInputDevice());
+    }
+
+    @Test
+    public void inputData() {
+        assertEquals("Hello World!", computer.inputData("Hello World!"));
+    }
+
+    @Test
+    public void outPutDataStream() {
+        computer.inputData("Hello World!");
+        assertEquals("Hello World! is now on screen", computer.outPutDataStream());
+    }
+
+   }
