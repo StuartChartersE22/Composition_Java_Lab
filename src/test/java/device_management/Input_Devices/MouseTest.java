@@ -1,4 +1,4 @@
-package device_management;
+package device_management.Input_Devices;
 
 import device_management.Input_Devices.Mouse;
 import org.junit.Before;
@@ -23,5 +23,10 @@ public class MouseTest {
     @Test
     public void getType() {
         assertEquals("Wireless", mouse.getType());
+    }
+
+    @Test
+    public void canSendData(){
+        assertEquals("Sending Data", mouse.sendData("Sending Data"));
     }
 }

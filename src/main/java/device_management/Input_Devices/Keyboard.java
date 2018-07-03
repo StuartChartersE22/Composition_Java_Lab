@@ -1,6 +1,8 @@
 package device_management.Input_Devices;
 
-public class Keyboard {
+import behaviours.IInput;
+
+public class Keyboard implements IInput {
 
     private String type;
 
@@ -10,5 +12,9 @@ public class Keyboard {
 
     public String getType() {
         return this.type;
+    }
+
+    public String sendData(String data) {
+        return data;
     }
 }

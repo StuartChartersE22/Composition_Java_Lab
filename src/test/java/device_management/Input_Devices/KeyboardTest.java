@@ -18,4 +18,9 @@ public class KeyboardTest {
     public void getType() {
         assertEquals("English", keyboard.getType());
     }
+
+    @Test
+    public void canSendData(){
+        assertEquals("Sending Data", keyboard.sendData("Sending Data"));
+    }
 }
