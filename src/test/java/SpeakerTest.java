@@ -1,4 +1,4 @@
-import device_management.Speaker;
+import device_management.Output_Devices.Speaker;
 import org.junit.Before;
 import org.junit.Test;
 

@@ -1,4 +1,4 @@
-import device_management.Radio;
+import device_management.Output_Devices.Radio;
 import org.junit.Before;
 import org.junit.Test;
 

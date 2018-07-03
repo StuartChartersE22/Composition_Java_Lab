@@ -1,4 +1,4 @@
-import device_management.Television;
+import device_management.Output_Devices.Television;
 import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;

@@ -1,4 +1,4 @@
-import device_management.Monitor;
+import device_management.Output_Devices.Monitor;
 import org.junit.Before;
 import org.junit.Test;
 

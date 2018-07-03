@@ -1,4 +1,4 @@
-package device_management;
+package device_management.Output_Devices;
 
 public class Television extends VideoDevice {
     public Television(int screenSize, int pixels) {

@@ -1,4 +1,4 @@
-package device_management;
+package device_management.Input_Devices;
 
 public class Mouse {
 

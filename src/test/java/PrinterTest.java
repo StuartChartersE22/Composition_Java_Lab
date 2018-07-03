@@ -1,4 +1,4 @@
-import device_management.Printer;
+import device_management.Output_Devices.Printer;
 import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;

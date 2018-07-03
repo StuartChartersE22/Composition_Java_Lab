@@ -1,4 +1,4 @@
-import device_management.TypeWriter;
+import device_management.Output_Devices.TypeWriter;
 
 import static org.junit.Assert.*;
 import org.junit.Before;

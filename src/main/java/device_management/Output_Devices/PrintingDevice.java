@@ -1,4 +1,4 @@
-package device_management;
+package device_management.Output_Devices;
 
 public abstract class PrintingDevice {
     private String make;
